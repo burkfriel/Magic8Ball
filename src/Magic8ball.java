@@ -8,7 +8,7 @@ public class Magic8ball {
         String Question;
         int number;
         boolean playAgain;
-        playAgain = false;
+        playAgain = true;
         int playAgainn;
         boolean done;
         done = false;
@@ -18,11 +18,12 @@ public class Magic8ball {
 
 
 
-        while(!playAgain) {
+        while(playAgain) {
 
             System.out.println("This is a magic 8 ball what is your question.");
             Question = keyboard.nextLine();
             number = (int) (Math.random() * 100);
+            done = false;
 
             while(!done) {
 
@@ -61,17 +62,15 @@ public class Magic8ball {
 
 
 
-            System.out.println("Would you like to play again 1=Yes 2=No.");
+            System.out.println("Would you like to play again 1=No 2=Yes.");
             playAgainn = keyboard.nextInt();
             keyboard.nextLine();
 
-            if (playAgainn == 2) {
-                System.out.println("Thank you for playing my magic 8 ball.");
-                playAgain = true;
-            }
             if (playAgainn == 1) {
+                System.out.println("Thank you for playing my magic 8 ball.");
                 playAgain = false;
             }
+
         }
     }
 }
